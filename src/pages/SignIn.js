@@ -22,7 +22,7 @@ const SignIn = () => {
   };
   return (
     <div>
-      <button onClick={onGoogleSignIn}> Sign In with Google</button>
+      <button onClick={onGoogleSignIn}> Sign In with Google </button>
     </div>
   );
 };
