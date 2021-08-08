@@ -1,101 +1,63 @@
-@import 'override';
-@import 'utility';
-@import 'utility_colors';
+// Variables
+$google-btn-bg-color: #1da1f2;
+$google-btn-bg-color-darker: #1877F2;
+$background-color: #f5f5f5;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  background-color: #fcfcfc;
-}
-
-html,
-body,
-#root,
-#root > div {
-  height: 100%;
-}
-
-.custom-scroll {
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #ddd;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: darken(#ddd, 20%);
-  }
-}
-
-.img-fullsize {
-  * {
-    width: auto !important;
-    height: auto !important;
-  }
-}
-
-.chat-top,
-.chat-middle,
-.chat-bottom {
-  margin: 0;
-  padding: 0;
-}
-
-.chat-top,
-.chat-bottom {
+// Mixins
+@mixin flex-wrapper($direction) {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  flex-direction: $direction;
 }
 
-$chat-t: 75px;
-$chat-b: 65px;
-
-.chat-top {
-  height: $chat-t;
+@mixin button($color, $bg_color) {
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: $bg_color;
+  color: $color;
 }
 
-.chat-bottom {
-  height: $chat-b;
-}
-
-.chat-middle {
-  height: calc(100% - #{$chat-t} - #{$chat-b});
-}
-
-.msg-list {
-  padding: 0;
+* {
   margin: 0;
-  height: 100%;
-  overflow-y: auto;
-  list-style-type: none;
-  li {
-    &:last-child {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-    }
-  }
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.animate-blink {
-  animation: blink normal 1.5s infinite ease-in-out;
-  color: red !important;
-  @keyframes blink {
-    0% {
-      opacity: 1;
+.login {
+  @include flex-wrapper(row);
+  margin: 10% auto;
+
+  .login__card {
+    @include flex-wrapper(column);
+    background-color: $background-color;
+    width: 45%;
+    min-height: 20em;
+    border-radius: 20px;
+
+    h1{
+        font-size: 2.3rem;
+        margin-bottom: 0.2em;
     }
-    50% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 1;
+
+    .login__button {
+      @include button(white, $google-btn-bg-color);
+      padding: 0.8em 2em;
+      margin: 3em auto;
+      border-radius: 20px;
+
+      &:hover{
+          background-color: $google-btn-bg-color-darker;
+      }
+
+      &:active{
+          transform: scale(0.98);
+      }
+
+      i{
+          margin-right:15px;
+      }
     }
   }
 }

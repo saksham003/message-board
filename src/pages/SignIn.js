@@ -21,8 +21,14 @@ const SignIn = () => {
     }
   };
   return (
-    <div>
-      <button onClick={onGoogleSignIn}> Sign In with Google </button>
+    <div className="login">
+      <div className="login__card">
+        <h1>Welcome to the Message Board!</h1>
+        <p>Find the topics you like and chat with like minded people.</p>
+        <button onClick={onGoogleSignIn} className="login__button">
+          <i class="fab fa-google"></i>Sign In with Google
+        </button>
+      </div>
     </div>
   );
 };
