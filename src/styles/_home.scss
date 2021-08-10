@@ -1,0 +1,16 @@
+.home__wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .home {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+
+        .temp {
+            display: flex;
+            flex-grow: 4;
+            height: 100vh;
+        }
+    }
+}

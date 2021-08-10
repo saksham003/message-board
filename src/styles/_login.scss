@@ -1,0 +1,36 @@
+.login {
+  @include flex-wrapper(row);
+  margin: 10% auto;
+
+  .login__card {
+    @include flex-wrapper(column);
+    background-color: $background-color;
+    width: 45%;
+    min-height: 20em;
+    border-radius: 20px;
+
+    h1{
+        font-size: 2.3rem;
+        margin-bottom: 0.2em;
+    }
+
+    .login__button {
+      @include button(white, $google-btn-bg-color);
+      padding: 0.8em 2em;
+      margin: 3em auto;
+      border-radius: 20px;
+
+      &:hover{
+          background-color: $google-btn-bg-color-darker;
+      }
+
+      &:active{
+          transform: scale(0.98);
+      }
+
+      i{
+          margin-right:15px;
+      }
+    }
+  }
+}

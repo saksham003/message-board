@@ -16,8 +16,8 @@ const Home = () => {
 
   const onSignOut = () => {
     auth.signOut();
-    closeDashboard();
     alert('Signed out!');
+    closeDashboard();
   };
 
   return (
