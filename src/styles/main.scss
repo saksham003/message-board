@@ -1,63 +1,12 @@
-// Variables
-$google-btn-bg-color: #1da1f2;
-$google-btn-bg-color-darker: #1877F2;
-$background-color: #f5f5f5;
-
-// Mixins
-@mixin flex-wrapper($direction) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: $direction;
-}
-
-@mixin button($color, $bg_color) {
-  border: none;
-  text-decoration: none;
-  text-align: center;
-  background-color: $bg_color;
-  color: $color;
-}
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'login.scss';
+@import 'sidebar.scss';
+@import 'dashboard.scss';
+@import 'home.scss';
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.login {
-  @include flex-wrapper(row);
-  margin: 10% auto;
-
-  .login__card {
-    @include flex-wrapper(column);
-    background-color: $background-color;
-    width: 45%;
-    min-height: 20em;
-    border-radius: 20px;
-
-    h1{
-        font-size: 2.3rem;
-        margin-bottom: 0.2em;
-    }
-
-    .login__button {
-      @include button(white, $google-btn-bg-color);
-      padding: 0.8em 2em;
-      margin: 3em auto;
-      border-radius: 20px;
-
-      &:hover{
-          background-color: $google-btn-bg-color-darker;
-      }
-
-      &:active{
-          transform: scale(0.98);
-      }
-
-      i{
-          margin-right:15px;
-      }
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
