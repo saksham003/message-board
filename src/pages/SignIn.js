@@ -12,6 +12,7 @@ const SignIn = () => {
         await database.ref(`/profiles/${user.uid}`).set({
           name: user.displayName,
           createdAt: firebase.database.ServerValue.TIMESTAMP,
+          avatar: additionalUserInfo.profile.picture,
         });
       }
 

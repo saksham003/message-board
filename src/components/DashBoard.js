@@ -7,6 +7,8 @@ const DashBoard = ({ closeDashboard, onSignOut }) => {
   const { profile } = useProfile();
   const [slideOut, setSlideOut] = useState(false);
 
+  
+
   const onCloseDashboard = () => {
     setSlideOut(true);
     setTimeout(() => {
@@ -32,9 +34,10 @@ const DashBoard = ({ closeDashboard, onSignOut }) => {
     <div className={`dashboard__wrapper ${slideOut && 'fade-out'}`}>
       <div className={`dashboard ${slideOut && 'slide-out'}`}>
         <p>Dashboard</p>
+        <img src={profile.avatar} alt="" />
         <i className="fas fa-times" onClick={onCloseDashboard}></i>
         <div className="dashboard__heading">
-          <h3>Hey! {profile.name}</h3>
+          <h3>{profile.name}</h3>
         </div>
         <EditableInput onSave={onSave} defaultValue={profile.name} />
         <div className="dashboard__signout">

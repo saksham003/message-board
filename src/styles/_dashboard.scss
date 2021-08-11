@@ -21,7 +21,7 @@
     height: 100vh;
     width: 30%;
     z-index: 10;
-    background-color: $dashboard-background-color;
+    background-color: $secondary-background-color;
     margin-bottom: auto;
 
     .fa-times {
@@ -36,6 +36,11 @@
     p {
       margin-right: auto;
       font-weight: 800;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 7em;
     }
 
     .dashboard__heading {
