@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="home__wrapper">
       {isDashboard && (
-        <DashBoard onCloseDashboard={closeDashboard} onSignOut={onSignOut} />
+        <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
       )}
       <div className="home">
         <SideBar onShowDashboard={showDashboard} />

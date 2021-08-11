@@ -1,9 +1,12 @@
-@import 'variables.scss';
-@import 'mixins.scss';
+@import 'util/variables.scss';
+@import 'util/mixins.scss';
 @import 'login.scss';
 @import 'sidebar.scss';
 @import 'dashboard.scss';
 @import 'home.scss';
+@import 'util/animations.scss';
+@import 'util/util.scss';
+@import 'editable-input.scss';
 
 * {
     margin: 0;

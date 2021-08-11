@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["Unsub", "signin"]
+  "cSpell.words": ["Unsub", "signin"],
+  "files.associations": {
+    "*.js": "javascriptreact"
+  }
 }
