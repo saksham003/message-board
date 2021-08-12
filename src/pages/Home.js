@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import DashBoard from '../components/DashBoard';
+import Modal from '../components/Modal';
 import SideBar from '../components/SideBar';
 import { auth } from '../misc/firebase';
 
 const Home = () => {
   const [isDashboard, setIsDashboard] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const showDashboard = () => {
     setIsDashboard(true);
@@ -20,15 +22,29 @@ const Home = () => {
     closeDashboard();
   };
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <div className="home__wrapper">
-      {isDashboard && (
-        <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
-      )}
-      <div className="home">
-        <SideBar onShowDashboard={showDashboard} />
+    <Fragment>
+      {showModal && <Modal onCloseModal={closeModal} />}
+      <div className="home__wrapper">
+        {isDashboard && (
+          <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
+        )}
+        <div className="home">
+          <SideBar
+            onShowDashboard={showDashboard}
+            openModal={openModal}
+            closeModal={closeModal}
+          />
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

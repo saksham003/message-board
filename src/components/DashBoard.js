@@ -35,7 +35,7 @@ const DashBoard = ({ closeDashboard, onSignOut }) => {
       <div className={`dashboard ${slideOut && 'slide-out'}`}>
         <p>Dashboard</p>
         <img src={profile.avatar} alt="" />
-        <i className="fas fa-times" onClick={onCloseDashboard}></i>
+        <i className="fas fa-times" id='close-dashboard' onClick={onCloseDashboard}></i>
         <div className="dashboard__heading">
           <h3>{profile.name}</h3>
         </div>

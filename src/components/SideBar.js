@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Fragment} from 'react';
 
-const SideBar = ({ onShowDashboard }) => {
+const SideBar = ({ onShowDashboard, openModal, closeModal }) => {
+
+  const onShowModal = () => {
+    openModal()
+  };
+
   return (
-    <div className="sidebar">
-      <button onClick={onShowDashboard} className="sidebar__button">
-        Access Dashboard
-      </button>
-    </div>
+    <Fragment>
+      <div className="sidebar">
+        <button onClick={onShowDashboard} className="sidebar__dashboard">
+          Access Dashboard
+        </button>
+        <button onClick={onShowModal} className="sidebar__new-room">
+          Create new chat room
+        </button>
+      </div>
+    </Fragment>
   );
 };
 

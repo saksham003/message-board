@@ -27,7 +27,7 @@ const SignIn = () => {
         <h1>Welcome to the Message Board!</h1>
         <p>Find the topics you like and chat with like minded people.</p>
         <button onClick={onGoogleSignIn} className="login__button">
-          <i class="fab fa-google"></i>Sign In with Google
+          <i className="fab fa-google"></i>Sign In with Google
         </button>
       </div>
     </div>
