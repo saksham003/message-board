@@ -1,0 +1,83 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 100;
+
+  .modal__container {
+    @include flex_wrapper(column);
+    width: 35%;
+    margin: 10% auto;
+    background-color: $background-color;
+    border-radius: 5px;
+    padding: 1em 2em;
+    position: relative;
+
+    #close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .modal__header {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .modal__body {
+      width: 100%;
+      height: 15em;
+      
+      p{
+          margin-bottom: 0.5em;
+      }
+
+      input {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        border: 1px solid $tertiary-background-color;
+        margin-bottom: 1em;
+        padding: 0.1rem 0.8rem;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      textarea {
+        height: 3rem;
+        border: 1px solid $tertiary-background-color;
+        width: 100%;
+        height: 6em;
+        border-radius: 10px;
+        padding: 0.2rem 0.8rem;
+        resize: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .modal__footer {
+      width: 100%;
+      text-align: center;
+
+      button {
+        @include button(white, $tertiary-button-color);
+        border-radius: 5px;
+        padding: 0.5em 1em;
+        width: 85%;
+        transition: all 0.3s ease;
+        margin: 0.2em auto;
+        &:hover {
+          background-color: $tertiary-button-color-dark;
+        }
+      }
+    }
+  }
+}
