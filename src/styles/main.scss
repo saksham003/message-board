@@ -8,9 +8,11 @@
 @import 'util/util.scss';
 @import 'editable-input.scss';
 @import 'modal.scss';
+@import 'chatroom-container';
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+

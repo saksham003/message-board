@@ -8,23 +8,32 @@
   flex-grow: 1;
   border: 1px solid $tertiary-background-color;
 
-  button {
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    width: 85%;
-    transition: all 0.3s ease;
-    margin: 0.2em auto;
-  }
-  .sidebar__dashboard {
-    @include button(white, $primary-button-color);
-    &:hover {
-      background-color: $primary-button-color-dark;
+  .sidebar__buttons {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      border-radius: 5px;
+      padding: 0.5em 1em;
+      width: 85%;
+      transition: all 0.3s ease;
+      margin: 0.2em auto;
     }
-  }
-  .sidebar__new-room{
-    @include button(white, $secondary-button-color);
-    &:hover {
-      background-color: $secondary-button-color-dark;
+    .sidebar__dashboard {
+      @include button(white, $primary-button-color);
+      &:hover {
+        background-color: $primary-button-color-dark;
+      }
+    }
+    .sidebar__new-room {
+      @include button(white, $secondary-button-color);
+      &:hover {
+        background-color: $secondary-button-color-dark;
+      }
     }
   }
 }

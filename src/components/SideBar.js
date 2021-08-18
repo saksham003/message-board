@@ -1,14 +1,14 @@
-import React, { Fragment} from 'react';
+import React from 'react';
+import ChatroomContainer from './ChatroomContainer';
 
-const SideBar = ({ onShowDashboard, openModal, closeModal }) => {
-
+const SideBar = ({ onShowDashboard, openModal }) => {
   const onShowModal = () => {
-    openModal()
+    openModal();
   };
 
   return (
-    <Fragment>
-      <div className="sidebar">
+    <div className="sidebar">
+      <div className="sidebar__buttons">
         <button onClick={onShowDashboard} className="sidebar__dashboard">
           Access Dashboard
         </button>
@@ -16,7 +16,8 @@ const SideBar = ({ onShowDashboard, openModal, closeModal }) => {
           Create new chat room
         </button>
       </div>
-    </Fragment>
+      <ChatroomContainer />
+    </div>
   );
 };
 

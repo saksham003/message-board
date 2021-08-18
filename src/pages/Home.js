@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import DashBoard from '../components/DashBoard';
 import Modal from '../components/Modal';
 import SideBar from '../components/SideBar';
+import { RoomContextProvider } from '../context/rooms.context';
 import { auth } from '../misc/firebase';
 
 const Home = () => {
@@ -30,21 +31,23 @@ const Home = () => {
   };
 
   return (
-    <Fragment>
-      {showModal && <Modal onCloseModal={closeModal} />}
-      <div className="home__wrapper">
-        {isDashboard && (
-          <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
-        )}
-        <div className="home">
-          <SideBar
-            onShowDashboard={showDashboard}
-            openModal={openModal}
-            closeModal={closeModal}
-          />
+    <RoomContextProvider>
+      <Fragment>
+        {showModal && <Modal onCloseModal={closeModal} />}
+        <div className="home__wrapper">
+          {isDashboard && (
+            <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
+          )}
+          <div className="home">
+            <SideBar
+              onShowDashboard={showDashboard}
+              openModal={openModal}
+              closeModal={closeModal}
+            />
+          </div>
         </div>
-      </div>
-    </Fragment>
+      </Fragment>
+    </RoomContextProvider>
   );
 };
 
