@@ -1,9 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router';
 import DashBoard from '../components/DashBoard';
 import Modal from '../components/Modal';
 import SideBar from '../components/SideBar';
 import { RoomContextProvider } from '../context/rooms.context';
 import { auth } from '../misc/firebase';
+import ChatDisplay from './Chat-components/ChatDisplay';
 
 const Home = () => {
   const [isDashboard, setIsDashboard] = useState(false);
@@ -32,21 +34,24 @@ const Home = () => {
 
   return (
     <RoomContextProvider>
-      <Fragment>
-        {showModal && <Modal onCloseModal={closeModal} />}
-        <div className="home__wrapper">
-          {isDashboard && (
-            <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
-          )}
-          <div className="home">
-            <SideBar
-              onShowDashboard={showDashboard}
-              openModal={openModal}
-              closeModal={closeModal}
-            />
-          </div>
+      {showModal && <Modal onCloseModal={closeModal} />}
+      <div className="home__wrapper">
+        {isDashboard && (
+          <DashBoard closeDashboard={closeDashboard} onSignOut={onSignOut} />
+        )}
+        <div className="home">
+          <SideBar
+            onShowDashboard={showDashboard}
+            openModal={openModal}
+            closeModal={closeModal}
+          />
+          <Switch>
+            <Route exact path="/chats/:chatId">
+              <ChatDisplay />
+            </Route>
+          </Switch>
         </div>
-      </Fragment>
+      </div>
     </RoomContextProvider>
   );
 };
