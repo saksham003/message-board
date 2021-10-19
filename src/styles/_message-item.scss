@@ -1,0 +1,22 @@
+.message-item {
+  list-style-type: none;
+  width: 100%;
+  padding: 0.5em 1em;
+
+  .message-item__info {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+
+    img {
+      width: 1.7em;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+
+  .message-item__msg {
+    display: flex;
+    margin-left: 2.6em;
+  }
+}

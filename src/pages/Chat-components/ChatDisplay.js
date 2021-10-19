@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { CurrentRoomProvider } from '../../context/current-room-context';
 import { useRooms } from '../../context/rooms.context';
 import ChatBottom from './ChatBottom';
+import ChatMain from './ChatMain';
 import ChatTop from './ChatTop';
 
 const ChatDisplay = () => {
@@ -24,7 +25,6 @@ const ChatDisplay = () => {
     name,
     description,
   };
-  
 
   return (
     <CurrentRoomProvider data={currentRoomData}>
@@ -32,9 +32,11 @@ const ChatDisplay = () => {
         <div className="chat__top">
           <ChatTop />
         </div>
-        <div className="chat__main">main</div>
+        <div className="chat__main">
+          <ChatMain />
+        </div>
         <div className="chat__bottom">
-          <ChatBottom/>
+          <ChatBottom />
         </div>
       </div>
     </CurrentRoomProvider>
